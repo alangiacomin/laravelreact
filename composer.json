@@ -6,7 +6,7 @@
         "laravel",
         "react"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "require": {
         "laravel/sanctum": "^2.8.2",
@@ -22,13 +22,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "AlanGiacomin\\LaravelReact\\": "src/"
+            "AG\\LaravelReact\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "AlanGiacomin\\LaravelReact\\LaravelReactServiceProvider"
+                "AG\\LaravelReact\\LaravelReactServiceProvider"
             ]
         }
     }
