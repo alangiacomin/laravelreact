@@ -129,20 +129,20 @@ class InstallCommand extends Command
         $this->fileAppendContent(
             $filesystem,
             base_path('routes/web.php'),
-            "Route::get('/user', [UserController::class, 'user']);",
+            "\nRoute::get('/user', [UserController::class, 'user']);\n",
             "Route::get('/user'"
         );
         $this->fileAppendContent(
             $filesystem,
             base_path('routes/web.php'),
-            "Route::post('/login', [UserController::class, 'postLogin']);",
+            "Route::post('/login', [UserController::class, 'postLogin']);\n",
             "Route::post('/login'"
         );
         $this->fileAppendContent(
             $filesystem,
             base_path('routes/web.php'),
-            "Route::post('/logout', [UserController::class, 'logout']);",
-            "Route::psot('/logout'"
+            "Route::post('/logout', [UserController::class, 'logout']);\n",
+            "Route::post('/logout'"
         );
         $this->fileAppendContent(
             $filesystem,
