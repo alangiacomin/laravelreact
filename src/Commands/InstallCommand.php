@@ -119,10 +119,35 @@ class InstallCommand extends Command
             "use Illuminate\Support\Facades\Route;\nuse App\Http\Controllers\HomeController;",
             'use App\Http\Controllers\HomeController;'
         );
+        $this->fileReplaceContent(
+            $filesystem,
+            base_path('routes/web.php'),
+            'use Illuminate\Support\Facades\Route;',
+            "use Illuminate\Support\Facades\Route;\nuse App\Http\Controllers\UserController;",
+            'use App\Http\Controllers\UserController;'
+        );
         $this->fileAppendContent(
             $filesystem,
             base_path('routes/web.php'),
-            "\n\nRoute::get('/{any}', [HomeController::class, 'index'])\n  ->where('any', '.*')->name('home');\n",
+            "Route::get('/user', [UserController::class, 'user']);",
+            "Route::get('/user'"
+        );
+        $this->fileAppendContent(
+            $filesystem,
+            base_path('routes/web.php'),
+            "Route::post('/login', [UserController::class, 'postLogin']);",
+            "Route::post('/login'"
+        );
+        $this->fileAppendContent(
+            $filesystem,
+            base_path('routes/web.php'),
+            "Route::post('/logout', [UserController::class, 'logout']);",
+            "Route::psot('/logout'"
+        );
+        $this->fileAppendContent(
+            $filesystem,
+            base_path('routes/web.php'),
+            "\nRoute::get('/{any}', [HomeController::class, 'index'])->where('any', '.*')->name('home');\n",
             'Route::get(\'/{any}\''
         );
 
