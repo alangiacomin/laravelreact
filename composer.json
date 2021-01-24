@@ -9,8 +9,13 @@
     "version": "1.0.3",
     "license": "MIT",
     "require": {
+        "illuminate/support": "~6.0|~7.0|~8.0",
         "laravel/sanctum": "^2.8.2",
         "tcg/voyager": "^1.4.2"
+    },
+    "require-dev": {
+        "laravel/framework": "~6.0|~7.0|~8.0",
+        "phpunit/phpunit": "^9.3.3"
     },
     "authors": [
         {
