@@ -6,7 +6,6 @@
         "laravel",
         "react"
     ],
-    "version": "1.0.3",
     "license": "MIT",
     "require": {
         "illuminate/support": "~6.0|~7.0|~8.0",
