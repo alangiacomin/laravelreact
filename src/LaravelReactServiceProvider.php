@@ -251,6 +251,7 @@ class LaravelReactServiceProvider extends ServiceProvider
     private function registerPublishableResources()
     {
         $publishablePath = dirname(__DIR__) . '/publishable';
+        $stubsPath = dirname(__DIR__) . '/stubs';
 
         $publishable = [
             'controllers' => [
@@ -264,6 +265,12 @@ class LaravelReactServiceProvider extends ServiceProvider
             ],
             'vscode' => [
                 "{$publishablePath}/laravelreact.code-workspace" => base_path(basename(base_path()) . '.code-workspace'),
+            ],
+            'reactpage-tmp' => [
+                "{$stubsPath}/js/DummyPage" => base_path('temp/DummyPage'),
+            ],
+            'reactpage' => [
+                base_path('temp') => base_path('resources/js/pages'),
             ],
         ];
 
@@ -363,5 +370,6 @@ class LaravelReactServiceProvider extends ServiceProvider
     {
         $this->commands(Commands\VSCodeCommand::class);
         $this->commands(Commands\InstallCommand::class);
+        $this->commands(Commands\ReactPageCommand::class);
     }
 }
