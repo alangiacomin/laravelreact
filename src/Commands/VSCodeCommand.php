@@ -2,10 +2,9 @@
 
 namespace AG\LaravelReact\Commands;
 
-use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
-class VSCodeCommand extends Command
+class VSCodeCommand extends BaseCommand
 {
     /**
      * The console command name.
@@ -32,12 +31,6 @@ class VSCodeCommand extends Command
     {
         $this->info($this->description);
 
-        // Publish only relevant resources on install (only new files)
-        // $tags = ['vscode'];
-        // $this->call('vendor:publish', ['--tag' => $tags]);
-
-        // Publish only relevant resources on install (force overwrite)
-        $tags = ['vscode'];
-        $this->call('vendor:publish', ['--tag' => $tags, '--force' => true]);
+        $this->vendorPublishForce(['vscode']);
     }
 }
